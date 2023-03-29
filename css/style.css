@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -45,6 +48,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
+  --bs-font-jost:'Jost', sans-serif;
   --bs-font-sans-serif: "Inter", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
@@ -53,7 +57,7 @@
     rgba(255, 255, 255, 0.15),
     rgba(255, 255, 255, 0)
   );
-  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-family: var(--bs-font-jost);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -225,6 +229,7 @@ blockquote {
 b,
 strong {
   font-weight: bolder;
+  color:var(--bs-primary);
 }
 
 small,
@@ -255,11 +260,12 @@ sup {
 }
 
 a {
-  color: #f17945;
+  color: var(--bs-secondary);
   text-decoration: underline;
 }
 a:hover {
-  color: #c16137;
+  color: var(--bs-secondary-clear);
+
 }
 
 a:not([href]):not([class]),
@@ -4396,7 +4402,7 @@ fieldset:disabled .btn {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #f17945;
+  color: var(--bs-success);
   text-decoration: none;
   -webkit-transition: color 0.15s ease-in-out,
     background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
@@ -4414,7 +4420,7 @@ fieldset:disabled .btn {
 }
 .nav-link:hover,
 .nav-link:focus {
-  color: #c16137;
+  color: var(--bs-success-clear);
 }
 .nav-link.disabled {
   color: #6c757d;
@@ -4444,8 +4450,8 @@ fieldset:disabled .btn {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
-  background-color: #fff;
+  color: var(--bs-success);
+  background-color: var(--bs-success);
   border-color: #dee2e6 #dee2e6 #fff;
 }
 .nav-tabs .dropdown-menu {
@@ -4463,7 +4469,7 @@ fieldset:disabled .btn {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #f17945;
+  background-color: var(--bs-success);
 }
 
 .nav-fill > .nav-link,
@@ -6607,7 +6613,7 @@ fieldset:disabled .btn {
   z-index: 1080;
   display: block;
   margin: 0;
-  font-family: var(--bs-font-sans-serif);
+  font-family: var(--bs-font-jost);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6721,7 +6727,7 @@ fieldset:disabled .btn {
   z-index: 1070;
   display: block;
   max-width: 276px;
-  font-family: var(--bs-font-sans-serif);
+  font-family: var(--bs-font-jost);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -12019,7 +12025,7 @@ fieldset:disabled .btn {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family:var(--bs-font-jost);
   font-weight: 400;
   font-size: 14px;
   color: #555;
@@ -12056,7 +12062,7 @@ h4,
 h5,
 .h5,
 .logo {
-  font-family: "Brygada 1918", sans-serif;
+  font-family: var(--bs-font-jost);
   color: #343661;
 }
 
@@ -12237,7 +12243,7 @@ textarea {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  font-family: "icomoon";
+  font-family: var(--bs-font-jost);
 }
 .site-nav .site-navigation .site-menu .has-children .dropdown {
   visibility: hidden;
@@ -12531,7 +12537,7 @@ textarea {
 .site-mobile-menu .site-nav-wrap .arrow-collapse:before {
   font-size: 14px;
   z-index: 20;
-  font-family: "icomoon";
+  font-family:var(--bs-font-jost);
   content: "\e313";
   position: absolute;
   top: 50%;
@@ -13276,7 +13282,7 @@ textarea {
   box-shadow: none !important;
 }
 .custom-accordion .accordion-item .btn-link:before {
-  font-family: "icomoon";
+  font-family: var(--bs-font-jost);
   content: "\f067";
   position: absolute;
   top: 50%;
@@ -13291,7 +13297,7 @@ textarea {
   background: #f17945;
 }
 .custom-accordion .accordion-item .btn-link[aria-expanded="true"]:before {
-  font-family: "icomoon";
+  font-family: var(--bs-font-jost);
   content: "\f068";
   position: absolute;
   color: #fff;
@@ -13332,11 +13338,11 @@ textarea {
 }
 .media-entry h3 a,
 .media-entry .h3 a {
-  color: #343661;
+  color: var(--bs-primary);
 }
 .media-entry h3 a:hover,
 .media-entry .h3 a:hover {
-  color: #f17945;
+  color: var(--bs-primary-clear);
 }
 
 .media-entry .m-body {
@@ -13354,7 +13360,7 @@ textarea {
 }
 
 .media-entry:hover .more .arrow {
-  border-color: #f17945;
+  border-color: var(--bs-secondary);
 }
 
 .media-entry p {
@@ -13366,7 +13372,7 @@ textarea {
   float: left;
   width: 44px;
   height: 44px;
-  background: #f17945;
+  background:var(--bs-info);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13753,7 +13759,7 @@ textarea {
 .site-footer .widget h3,
 .site-footer .widget .h3 {
   font-size: 16px;
-  color: #000;
+  color: var(--bs-primary);
   margin-bottom: 30px;
   font-weight: 700;
 }
@@ -13774,9 +13780,10 @@ textarea {
   width: 30px;
   height: 30px;
   position: relative;
-  background: #777;
+  background:  var(--bs-light);
   border-radius: 50%;
-  color: #fff;
+  color:var(--bs-secondary-clear);
+
 }
 .site-footer .social li a:before {
   display: none;
@@ -13790,7 +13797,7 @@ textarea {
   transform: translate(-50%, -50%);
 }
 .site-footer .social li a:hover {
-  background: #f59b74;
+  background: var(--bs-secondary);
   color: #fff;
 }
 

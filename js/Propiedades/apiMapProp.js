@@ -45,7 +45,7 @@ export default async function apiCallMap() {
                 // el.style.backgroundSize = "100%";
             
                 new mapboxgl.Marker({
-                    color: '#1ea498',
+                    color: '#04B0C3',
                     scale: .8
                 })
             
