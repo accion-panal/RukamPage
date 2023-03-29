@@ -12,15 +12,31 @@ const response = await ExchangeRateServices.getExchangeRateUF();
 const ufValue = response?.UFs[0]?.Valor
 const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
 
+let indicadores;
+let imagenes;
+
+data.images.forEach((images, index) => {imagenes +=
+`<div class="carousel-item ${ index == 0 ? "active" : "" }">
+	<img src="${images}" class="d-block w-100" alt="">						
+</div>  	
+`
+indicadores += `
+<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index}" ${index == 0 ? "class = active": ""} aria-current="true" aria-label="${index + 1}"></button>
+`
+}
+
+)
+
+
+
 	document.getElementById('detail-prop').innerHTML =
     `<div class="section" style="padding-top: 1rem;padding-bottom: 0rem;">
 		<div class="container">
-			<div class="row mb-4">
+			<div class="row mb-2">
 				<div class="col-8">
 					<h1><b>${data.title}</b></h1>
 					<span>Cod: ${data.id}</span><br>
 					<span><i class='bx bx-map'></i> ${data.city != undefined && data.city != "" && data.city != null ? data.city : "No registra ciudad" }, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune : "No registra comuna"}, Chile</span>
-
 				</div>
 				<div class="col-4 d-flex justify-content-end">
 					<div class="text-center">
@@ -29,9 +45,28 @@ const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col">
-					<img src="${data.image != undefined && data.image != "" && data.image != null ? data.image : "images/Sin.png" }" alt="Image" class="img-fluid">
+			<div class="section" style="padding-top:2rem; padding-bottom:2rem">
+				<div class="container" >
+					<div class="row">
+						<div class="col">											
+						<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-indicators">
+						${indicadores}
+						</div>
+						<div class="carousel-inner">
+						${imagenes}									
+						</div>	
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						  <span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						  <span class="visually-hidden">Next</span>
+						</button>
+					  </div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
