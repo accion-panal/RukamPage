@@ -1,2 +1,2 @@
-import apiCallMapContact from "./utils/mapsContact.js";
+import apiCallMapContact from "./Propiedades/mapsContact.js";
 apiCallMapContact()

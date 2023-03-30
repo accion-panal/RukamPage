@@ -1,4 +1,4 @@
-export default async function apiCallMapContact() {
+// export default async function apiCallMapContact() {
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2VyZ2lvdmVyYWhlcm5hbmRlemJpZGF0YSIsImEiOiJjbDMwZHc4cmswMDdqM2NydmIzYWF0cGl4In0.hsYQFPebleAB4j6mRckMzQ'
     const map = new mapboxgl.Map({
@@ -8,14 +8,13 @@ export default async function apiCallMapContact() {
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-0.055972,51.493228],
         projection: 'globe',
-        zoom: 4,
+        zoom: 15,
         
     });
 
                 // create the popup
-                const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
-                <span>Dirección: 43 Raymouth Rd. Baltemoer, London 3910</span>
-                <br>`)
+                const popup = new mapboxgl.Popup({ offset: 25 }).setText(`
+                Dirección: 43 Raymouth Rd. Baltemoer, London 3910`)
                 
                 // create DOM element for the marker
                 const ubicacion = document.createElement('div');
@@ -26,7 +25,7 @@ export default async function apiCallMapContact() {
                 // el.style.backgroundSize = "100%";
             
                 new mapboxgl.Marker({
-                    color: '#1ea498',
+                    color: '#04B0C3',
                     scale: .8
                 })
                     .setLngLat([-0.055972,51.493228])
@@ -37,19 +36,7 @@ export default async function apiCallMapContact() {
                 // new mapboxgl.Marker(el)
                 
                    
-
-  
-    // promiseMap.then(()=>{
-          
-    //     map.on('load', function () {
-    //         map.resize();
-    //     });
-    //     map.on('style.load', () => {
-    //         map.setFog({}); // Set the default atmosphere style
-
-    //     });
-    // })
      
 
 
-}
+// }

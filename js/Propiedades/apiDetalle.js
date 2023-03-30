@@ -17,7 +17,7 @@ let imagenes;
 
 data.images.forEach((images, index) => {imagenes +=
 `<div class="carousel-item ${ index == 0 ? "active" : "" }">
-	<img src="${images}" class="d-block w-100" alt="">						
+	<img src="${images != undefined && images != null && images != "" ? images : "images/Sin.png"}" class="d-block w-100" alt="">						
 </div>  	
 `
 indicadores += `
@@ -51,7 +51,7 @@ indicadores += `
 						<div class="col">											
 						<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 						<div class="carousel-indicators">
-						${indicadores}
+						${indicadores != undefined && indicadores != null ? indicadores : "no registra imagenes"}
 						</div>
 						<div class="carousel-inner">
 						${imagenes}									

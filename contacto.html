@@ -76,7 +76,7 @@
 
 	
 
-	<div class="hero overlay" style="padding-top: 0rem;padding-bottom: 3rem;">
+	<div class="hero overlay" style="padding-top: 0rem;">
 		<div class="img-bg rellax">
 			<img src="images/interiores3.jpg" alt="Image" class="img-fluid">
 		</div>
@@ -88,16 +88,15 @@
 		</div>
 	</div>
 	<!-- Formulario contactar -->
-	<div class="section" style="padding-bottom:3rem;padding-top: 2rem;">
+	<div class="section SectionformContactar" style="padding-bottom:1rem;">
 		<div class="container">
 			<div class="row">
-				<div class="col-12"	data-aos="fade-up" data-aos-delay="0">
-					
+				<div class="col-12"	data-aos="fade-up" data-aos-delay="0">				
 					<h2 class="heading mb-5">Contáctenos</h2>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+				<div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
 					<div class="contact-info" id="container-form-contact">
 						<form  method="post"  id="form-contact">
 							<div class="row">
@@ -122,8 +121,36 @@
 								</div>
 							</div>
 						</form>
+						<br>
 						<div id="respuesta"></div>
-						<div class="open-hours mt-5">
+					</div>
+				</div>
+				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+					<div id="map"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" style="padding-bottom:5rem;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+					<div class="contact-info">
+						<div class="email ">
+							<i class="icon-envelope"></i>
+							<h4 class="mb-2">E-mail:</h4>
+							<p>info@gmail.com</p>
+						</div> 
+						<div class="phone mt-5">
+							<i class="icon-phone"></i>
+							<h4 class="mb-2">Llamar:</h4>
+							<p>+56 9 234 165 89</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+					<div class="contact-info">
+						<div class="open-hours">
 							<i class="icon-clock-o"></i>
 							<h4 class="mb-2">Horarios:</h4>
 							<div class="d-flex">
@@ -137,36 +164,19 @@
 									9:00 AM - 14:30 PM
 								</p>
 							</div>
-					
 						</div>
-						 <div class="address mt-4">
+						<div class="address mt-4">
 							<i class="icon-room"></i>
 							<h4 class="mb-2">Ubicación:</h4>
 							<p>43 Raymouth Rd. Baltemoer, London 3910</p>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-					<div class="container-map">
-						<div class="mapContact"></div>
-					</div><!-- End Google Maps -->
-					  <div class="contact-info">
-						<div class="email mt-4">
-							<i class="icon-envelope"></i>
-							<h4 class="mb-2">E-mail:</h4>
-							<p>info@gmail.com</p>
-						</div> 
-
-						 <div class="phone mt-5">
-							<i class="icon-phone"></i>
-							<h4 class="mb-2">Llamar:</h4>
-							<p>+56 9 234 165 89</p>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
-	</div> 
+	</div>
+	
 	<!-- Fin Formulario contactar -->
 
 
@@ -222,12 +232,12 @@
 	<!-- FIN FOOTER -->
 
 		<!-- Preloader -->
-		<!-- <div id="overlayer"></div>
+		<div id="overlayer"></div>
 		<div class="loader">
 			<div class="spinner-border text-primary" role="status">
 				<span class="visually-hidden">Loading...</span>
 			</div>
-		</div> -->
+		</div>
 
 
 		<script src="js/bootstrap.bundle.min.js"></script>
@@ -243,7 +253,7 @@
 		<script src="sweetalert2.all.min.js"></script> -->
 
 		<script type="module" src="js/utils/PostContact.js"></script>
-		<script type="module" src="js/utils/mapsContact.js"></script>
+		<script type="module" src="js/Propiedades/mapsContact.js"></script>
 
 	</body>
 	</html>
