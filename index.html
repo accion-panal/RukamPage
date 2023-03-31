@@ -55,7 +55,7 @@
 							<li><a href="nosotros.html">¿Quiénes somos?</a></li>
 							<li><a href="propiedad.html">Propiedades</a></li>
 							<li><a href="contacto.html">Contáctanos</a></li>
-							<li><a href="http://190.114.255.247:195/">Intranet</a></li>
+							<li><a href="https://www.kiteprop.com/cl">Intranet</a></li>
 						</ul>
 					</div>
 					<div class="col-6 col-lg-3 text-lg-end">
@@ -89,15 +89,15 @@
 									<div class="col-lg">
 										<div class="form-group mb-4">
 											<select class="form-select" name="operationType" id="operationType">
-												<option value="0" selected>Tipo de operación</option>
-												<option value="venta" >Venta</option>
+												<option value="" selected>Tipo de operación</option>
+												<option value="venta">Venta</option>
 												<option value="arriendo" >Arriendo</option>
 												<option value="arriendo_temporal" >Arriendo Temporal</option>
 											</select>
 										</div>
 										<div class="form-group mb-4">
 											<select class="form-select" name="bathrooms" id="bathrooms">
-												<option value="0" selected>Baño(s)</option>
+												<option value="" selected>Baño(s)</option>
 												<option value="1" >1</option>
 												<option value="2" >2</option>
 												<option value="3" >3</option>
@@ -107,7 +107,7 @@
 										</div>
 										<div class="form-group mb-4">
 											<select class="form-select" name="covered_parking_lots" id="covered_parking_lots">
-												<option value="0" selected>Estacionamiento(s)</option>
+												<option value="" selected>Estacionamiento(s)</option>
 												<option value="1" >1</option>
 												<option value="2" >2</option>
 												<option value="3" >3</option>
@@ -128,7 +128,7 @@
 										</div>
 										<div class="form-group mb-4">
 											<select class="form-select" name="" id="bedrooms">
-												<option value="0" selected>Habitacion(s)</option>
+												<option value="" selected>Habitacion(s)</option>
 												<option value="1" >1</option>
 												<option value="2" >2</option>
 												<option value="3" >3</option>
@@ -161,33 +161,18 @@
 										<div class="form-group mb-4">
 											<select class="form-select" name="region" id="region">
 												<option value="0" selected>Región</option>
-												<option value="AricaParinacota" >Arica y Parinacota</option>
-												<option value="Antofagasta" >Antofagasta</option>
-												<option value="Araucania" >Araucania</option>
-												<option value="Atacama" >Atacama</option>
-												<option value="AysenGeneralCarlosIbanezCampo" >Aysén del General Carlos Ibañez del Campo</option>
-												<option value="Biobío" >Biobío</option>
-												<option value="Coquimbo" >Coquimbo</option>
-												<option value="LbtGeneralBernardoOHiggins" >Libertador General Bernardo O'Higgins</option>
-												<option value="Lagos" >Los Lagos</option>
-												<option value="Rios" >Los Rios</option>
-												<option value="Magallanes" >Magallanes y la Antártica Chilena</option>
-												<option value="Maule" >Maule</option>
-												<option value="nuble" >Ñuble</option>
-												<option value="Metropolitana" >Metropolitana de Santiago</option>
-												<option value="Tarapaca" >Tarapacá</option>
-												<option value="Valparaíso" >Valparaíso</option>
+												
 											</select>
 										</div>
 										<div class="form-group mb-4">
 											<select class="form-select" name="commune" id="commune">
-												<option value="0" selected>Comuna</option>
+												<option value="" selected>Comuna</option>
 											
 											</select>
 										</div>
 										<div class="form-group mb-4">
 											<select class="form-select" name="surface_m2" id="surface_m2">
-												<option value="0" selected>Superficie m2</option>
+												<option value="" selected>Superficie m2</option>
 												<option value="1" >1</option>
 												<option value="2" >2</option>
 												<option value="3" >3</option>
@@ -287,7 +272,7 @@
 							<li><a href="nosotros.html">¿Quiénes somos?</a></li>
 							<li><a href="propiedad.html">Propiedades</a></li>
 							<li><a href="contacto.html">Contáctanos</a></li>
-							<li><a href="http://190.114.255.247:195/">Intranet</a></li>
+							<li><a href="https://www.kiteprop.com/cl">Intranet</a></li>
 						</ul>
 					</div> 
 				</div> 
@@ -315,12 +300,12 @@
 
 
 		<!-- Preloader -->
-		<!-- <div id="overlayer"></div>
+		<div id="overlayer"></div>
 		<div class="loader">
 			<div class="spinner-border text-primary" role="status">
 				<span class="visually-hidden">Loading...</span>
 			</div>
-		</div> -->
+		</div>
 
 		<!-- Option 1: Bootstrap Bundle with Popper -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -341,6 +326,12 @@
 
 
 		<script type="module" src="/js/destacada_prop.js"></script>
+		<script type="module" src="/js/utils/filterOnSubmitIndex.js"></script>
+		<script type="module" src="/js/utils/filterOnSubmit.js"></script>
+
+		<script type="module" src="/js/utils/getSelects.js"></script>
+
+
 		<!-- <script type="module" src="/js/utils/getValuesOfinputs.js"></script> -->
 	</body>
 	</html>

@@ -2,10 +2,8 @@ import { getPropertiesOnForm } from "../services/PropertiesServices.js"
 // import { getProperties } from "../services/PropertiesServices.js";
 import	ExchangeRateServices from  "../services/ExchangeRateServices.js";
 
-import {parseToCLPCurrency, clpToUf} from "../utils/getExchangeRate.js";
+import {parseToCLPCurrency, clpToUf} from "./getExchangeRate.js";
  
-
-
 
 const onFormSubmit = (
     statusId,
@@ -38,6 +36,8 @@ const onFormSubmit = (
   };
 
   let query = {
+    page:1,
+    limit:10,
     realtorId: 0,
     statusId:1,
     companyId:1,
@@ -53,11 +53,11 @@ const onFormSubmit = (
     covered_parking_lots: "",
   }
 
-  // let aux = new URLSearchParams(window.location.search);
+  let aux = new URLSearchParams(window.location.search);
 
-  // for (let p of aux) {
-  //   query[`${p[0]}`] = p[1];
-  // }
+  for (let p of aux) {
+    query[`${p[0]}`] = p[1];
+  }
 
 
 
@@ -111,6 +111,17 @@ document.getElementById("surface_m2").addEventListener( "change", (element) => {
 document.getElementById("covered_parking_lots").addEventListener( "change", (element) => {
     query.covered_parking_lots = element.target.value;  
 })
+
+
+document.getElementById("buscar")?.addEventListener("click", async () => {
+	window.open(
+		window.location.origin +
+			`/propiedad.html?page=${query.page}&limit=${query.limit}&realtorId=${query.realtorId}&statusId=${query.statusId}&operationType=${query.operationType}&typeOfProperty=${query.typeOfProperty}&region=${query.region}&commune=${query.commune}&min_price=${query.min_price}&max_price=${query.max_price}&covered_parking_lots=${query.covered_parking_lots}&bathrooms=${query.bathrooms}&surface_m2=${query.surface_m2}&bedrooms=${query.bedrooms}`
+	);
+});
+
+
+
 
  document.getElementById('buscar2')?.addEventListener('click', async() => {
   console.log('buscando');
