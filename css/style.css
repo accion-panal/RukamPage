@@ -13993,3 +13993,16 @@ textarea {
     height: 890px !important;
   }
 }
+
+
+.imgCarrucel{
+  width: 100% !important;
+  height: 690px !important;
+}
+
+@media (max-width: 991px){ 
+  .imgCarrucel{
+    width: 100% !important;
+    height: 350px !important;
+  }
+}

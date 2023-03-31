@@ -39,7 +39,7 @@ let requestOptions = {
 fetch("https://aulen.partnersadvisers.info/contact", requestOptions)
   .then(response => response.text())
   .then(result => respuesta.innerHTML = `<div class="alert alert-success" role="alert">
-   Formulario enviado exitosamente, gracias ${firstName.value}!!
+   Formulario enviado exitosamente, Muchas gracias ${firstName.value}!!
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 `)

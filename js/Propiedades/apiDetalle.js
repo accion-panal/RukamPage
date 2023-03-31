@@ -17,7 +17,7 @@ let imagenes;
 
 data.images.forEach((images, index) => {imagenes +=
 `<div class="carousel-item ${ index == 0 ? "active" : "" }">
-	<img src="${images != undefined && images != null && images != "" ? images : "images/Sin.png"}" class="d-block w-100" alt="">						
+	<img src="${images != undefined && images != null && images != "" ? images : "images/Sin.png"}" class="d-block imgCarrucel" alt="">						
 </div>  	
 `
 indicadores += `
@@ -111,7 +111,7 @@ indicadores += `
 		</div>
 	`
 				
-	document.getElementById('mapDetail').innerHTML = `
+	document.getElementById('ContainerMap').innerHTML = `
 	<div class="section" style="padding-top:0rem; padding-bottom: 1rem;">
 		<div class="container">
 			<div class="row">
