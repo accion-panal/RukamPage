@@ -111,7 +111,7 @@ indicadores += `
 		</div>
 	`
 				
-	document.getElementById('ContainerMap').innerHTML = `
+	document.getElementById('container-map').innerHTML = `
 	<div class="section" style="padding-top:0rem; padding-bottom: 1rem;">
 		<div class="container">
 			<div class="row">

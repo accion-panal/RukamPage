@@ -20,6 +20,7 @@ const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
 document.getElementById("total-prop").innerHTML = `${response.meta.totalItems} Propiedades encontradas
 	</div>`;
   // let filtrado = data.filter(data => data.city != null && data.commune != null);
+ 
 
   document.getElementById('container-prop-card').innerHTML = data.map(data => 
     `<div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" id="" data-aos="fade-up" data-aos-delay="100" >

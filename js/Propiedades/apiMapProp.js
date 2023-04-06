@@ -3,6 +3,12 @@ import { getProperties} from "../services/PropertiesServices.js";
 
 export default async function apiCallMap() {
 
+    document.getElementById(
+		"map"
+	).innerHTML = `    	<div class="spinner-border" role="status">
+		<span class="visually-hidden">Loading...</span>
+	</div>`;
+
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2VyZ2lvdmVyYWhlcm5hbmRlemJpZGF0YSIsImEiOiJjbDMwZHc4cmswMDdqM2NydmIzYWF0cGl4In0.hsYQFPebleAB4j6mRckMzQ'
     const map = new mapboxgl.Map({
         
@@ -10,8 +16,8 @@ export default async function apiCallMap() {
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-70.680628,-33.469970],
-        projection: 'globe',
-        zoom: 4,
+        // projection: 'globe',
+        zoom: 5,
         
     });
 
