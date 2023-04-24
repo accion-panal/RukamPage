@@ -1,42 +1,11 @@
 import { getProperties } from "../services/PropertiesServices.js"
 
-
-// const onFormSubmit = (
-//     statusId,
-//     companyId,
-//     operationType,
-//     typeOfProperty,
-//     region,
-//     commune,
-//     min_price,
-//     max_price,
-//     bathrooms,
-//     bedrooms,
-//     surface_m2,
-//     covered_parking_lots
-//   ) => {
-//     return getPropertiesOnForm(
-//       statusId,
-//       companyId,
-//       operationType,
-//       typeOfProperty,
-//       region,
-//       commune,
-//       min_price,
-//       max_price,
-//       bathrooms,
-//       bedrooms,
-//       surface_m2,
-//       covered_parking_lots 
-//     );
-//   };
-
 let query = {
     page:1,
     limit:10,
     realtorId: 0,
     statusId:1,
-    companyId:1,
+    companyId:20,
     operationType : "",
     typeOfProperty: "",
     region : "",

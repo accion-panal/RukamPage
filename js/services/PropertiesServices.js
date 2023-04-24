@@ -5,10 +5,6 @@ export const getProperties = async(realtorId, statusId , companyId) => {
   return data;
 }
 
-// export const getPropertiesCant = async( totalItems = "") => {
-//   let {meta} = await api.get(`properties?totalItems=${totalItems}`);
-//   return meta;
-// }
 
 export const getPropertiesForId = async( id ,  statusId, companyId) => {
   let data = await api.get(`properties/${id}?&statusId=${statusId}&companyId=${companyId}`);
@@ -16,7 +12,10 @@ export const getPropertiesForId = async( id ,  statusId, companyId) => {
 }
 
 
-export const getPropertiesOnForm = async(statusId = 1, companyId=1, operationType="", typeOfProperty="", region="", commune="", min_price=0, max_price, bathrooms, bedrooms, surface_m2,covered_parking_lots) => {
+export const getPropertiesOnForm = async(page = 1, limit=10, realtorId = 0, statusId = 1, companyId = 20, operationType="", typeOfProperty="", region="", commune="", min_price=0, max_price=0, bathrooms=0, bedrooms=0, surface_m2=0,covered_parking_lots=0) => {
+const _page = `${page}`;
+const _limit = `${limit}`;
+const _realtorId = `${realtorId}`;
 const _statusId = `${statusId}`;
 const _companyId = `${companyId}`;
 const _operationType = operationType?.length > 0 ? operationType : false;
@@ -31,7 +30,7 @@ const _surface_m2 = surface_m2 > 0 || surface_m2 > '0' ? surface_m2 : false;
 const _covered_parking_lots = covered_parking_lots > 0 ? covered_parking_lots : false;
 
 
-const response = await api.get(`properties?statusId=${_statusId}&companyId=${_companyId}${_operationType?`&operationType=${_operationType}`:''}${_typeOfProperty?`&typeOfProperty=${_typeOfProperty}`:''}${_region?`&region=${_region}`:''}${_commune?`&commune=${_commune}`:''}${_min_price?`&min_price=${_min_price}`:''}${_max_price ? `&max_price=${_max_price}`:''}${_bathrooms ? `&bathrooms=${_bathrooms}` : ''}${_bedrooms ? `&bedrooms=${_bedrooms}` : ''}${_surface_m2?`&surface_m2=${_surface_m2}`:''}${_covered_parking_lots?`&covered_parking_lots=${_covered_parking_lots}`:''}`);
+const response = await api.get(`properties?page=${_page}&limit=${_limit}&realtorId=${_realtorId}&statusId=${_statusId}&companyId=${_companyId}${_operationType?`&operationType=${_operationType}`:''}${_typeOfProperty?`&typeOfProperty=${_typeOfProperty}`:''}${_region?`&region=${_region}`:''}${_commune?`&commune=${_commune}`:''}${_min_price?`&min_price=${_min_price}`:''}${_max_price ? `&max_price=${_max_price}`:''}${_bathrooms ? `&bathrooms=${_bathrooms}` : ''}${_bedrooms ? `&bedrooms=${_bedrooms}` : ''}${_surface_m2?`&surface_m2=${_surface_m2}`:''}${_covered_parking_lots?`&covered_parking_lots=${_covered_parking_lots}`:''}`);
 return response.data;
 
 }

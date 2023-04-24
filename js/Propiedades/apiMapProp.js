@@ -21,7 +21,7 @@ export default async function apiCallMap() {
         
     });
 
-    let {data} = await getProperties(0,1,1);
+    let {data} = await getProperties(0,1,20);
     const promiseMap = new Promise(
         (resolve)=>{
         data.map(data => {    
@@ -37,7 +37,7 @@ export default async function apiCallMap() {
                 const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
                 <span>${data.title}</span>
                 <br>
-                <a href="/detalle_propiedad.html?${data.id}&realtorId=${0}&statusId=${1}&companyId=${1}" name="VerDetalle"  class="more d-flex align-items-center float-start">
+                <a href="/detalle_propiedad.html?${data.id}&realtorId=${0}&statusId=${1}&companyId=${20}" name="VerDetalle"  class="more d-flex align-items-center float-start">
                 <span class="label" id="getProperty">Ver Detalle</span>
                 <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
                 </a>`)

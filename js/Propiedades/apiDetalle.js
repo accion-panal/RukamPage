@@ -12,6 +12,7 @@ const response = await ExchangeRateServices.getExchangeRateUF();
 const ufValue = response?.UFs[0]?.Valor
 const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
 
+
 let indicadores;
 let imagenes;
 
