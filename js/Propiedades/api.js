@@ -11,7 +11,6 @@ export default async function apiCall() {
 const response = await getProperties(0, 1, 20);
 const data = response.data;
 
-// let {data} = await getProperties(0, 1, 1);
 const response2 = await ExchangeRateServices.getExchangeRateUF();
 const ufValue = response2?.UFs[0]?.Valor
 const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
