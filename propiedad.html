@@ -214,12 +214,17 @@
 						<div class="col-3 col-lg-3 mt-3">
 							<span>Ordena por: </span>
 						</div>
-						<div class="col-9 col-lg-9">
-							<select id="" name="" class="form-select">
+						<div class="col-6 col-lg-6">
+							<select id="filtro-extra" name="" class="form-select">
 								<option value="0" selected>Relevancia</option>
 								<option value="1">Mayor a menor</option>
 								<option value="2">Menor a mayor</option>
 							</select>
+						</div>
+						<div class="col-3 col-lg-3 ">
+							<button type="button" class="btn btn-primary" id="buscar3">
+								Filtrar
+							</button>
 						</div>
 					</div>
 
@@ -342,6 +347,7 @@
 		<script type="module" src="/js/Propiedades/api.js"></script>
 		<script type="module" src="/js/mapProp.js"></script>
 		<script type="module" src="/js/index.js"></script>
+		<script type="module" src="/js/utils/filterExtra.js"></script>
 
 
 		<script type="module" src="/js/utils/filterOnSubmit.js"></script>
