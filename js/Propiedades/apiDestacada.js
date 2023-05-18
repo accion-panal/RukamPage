@@ -14,8 +14,9 @@ export default async function apiDestaCall(){
     const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
 
     document.getElementById('container-props-destacadas').innerHTML = filtrado.map(filtrado => 
-        `<div class="item">
-            <div class="media-entry">
+        `<li class="splide__slide" >	 
+        <div class="item">
+            <div class="media-entry" style="margin:0 10px 0 0;">
                 <a href="/detalle_propiedad.html?${data.id}&statusId=${1}&companyId=${20}">
                     <img src="${filtrado.image != undefined && filtrado.image != null && filtrado.image != "" ? filtrado.image : "images/Sin.png"}" alt="Image" class="img-fluid imgCasas">
                 </a>
@@ -34,7 +35,21 @@ export default async function apiDestaCall(){
                     </a>
                 </div>
             </div>
-        </div>` 
+        </div>
+        </li>` 
 ).join('');
 
+    let splide = new Splide(".splide", {
+        type: "loop",
+        autoplay: "play",
+        perPage: 3,
+    });
+    splide.mount();
+
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+	let splide = new Splide(".splide");
+	splide.mount();
+});
+apiDestaCall();
