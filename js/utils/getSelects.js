@@ -3,7 +3,6 @@ import	{ getCommune } from  "../services/PropertiesServices.js";
 
 const filterSelects = async()=> {
     let {data} = await getRegiones();
-    console.log(data);
     let region = document.getElementById('region');
 
     region.innerHTML = data.regions.map((data, i) => {
@@ -30,5 +29,3 @@ const filterSelects = async()=> {
 }
 filterSelects();
 
-// if (document.getElementById('region') != 0){
-// }

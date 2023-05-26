@@ -6,9 +6,7 @@ import {parseToCLPCurrency, clpToUf} from "./getExchangeRate.js";
  
 
 const onFormSubmit = (
-    page,
-    limit,
-    realtorId,
+
     statusId,
     companyId,
     operationType,
@@ -23,9 +21,6 @@ const onFormSubmit = (
     covered_parking_lots
   ) => {
     return getPropertiesOnForm(
-      page,
-      limit,
-      realtorId,
       statusId,
       companyId,
       operationType,
@@ -69,7 +64,6 @@ const onFormSubmit = (
 
   
 document.getElementById('operationType').addEventListener('change',(element) =>{
-    console.log(element.target.value)
     query.operationType = element.target.value;
     
  })
@@ -78,11 +72,9 @@ document.getElementById('operationType').addEventListener('change',(element) =>{
 })
 document.getElementById("region").addEventListener( "change", (element) => {
  query.region = element.target.value;  
- console.log(element.target.value)
 })
 document.getElementById("commune").addEventListener( "change", (element) => {
     query.commune =  element.target.value;
-    console.log(element.target.value)
   
 
   })
@@ -124,17 +116,9 @@ document.getElementById("buscar")?.addEventListener("click", async () => {
 
 
  document.getElementById('buscar2')?.addEventListener('click', async() => {
-  console.log('buscando');
-  document.getElementById(
-		"buscar2"
-	).innerHTML = `    	<div class="spinner-border" role="status">
-		<span class="visually-hidden">Loading...</span>
-	</div>`;
+  document.getElementById("buscar2").innerHTML = `<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>`;
 
   let filtred = await onFormSubmit(
-    1,
-    10,
-    0,
     1,
     20,
     query?.operationType,
@@ -155,7 +139,6 @@ document.getElementById("buscar")?.addEventListener("click", async () => {
 
 
   const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
-  console.log(filtred);
 	document.getElementById("total-prop").innerHTML = `${filtred.meta.totalItems} Propiedades encontradas
 	</div>`;
 	setTimeout(() => {
@@ -170,11 +153,11 @@ document.getElementById("buscar")?.addEventListener("click", async () => {
         `<div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" id="" data-aos="fade-up" data-aos-delay="100">
         <div class="media-entry">
           <a href="/detalle_propiedad.html?${data.id}&statusId=${1}&companyId=${20}">
-            <img src="${data.image != undefined && data.image != "" && data.image != null ? data.image : "images/Sin.png"  } " alt="Image" class="img-fluid imgCasas">
+            <img src="${data.image != undefined && data.image != "" && data.image != null ? data.image : "images/Sin.png" } " alt="Image" class="img-fluid imgCasas">
           </a>
           <div class="bg-white m-body">
-            <span class="date">${data.operation}</span>-
-            <span class="date"><b> UF ${clpToUf(data?.price, ufValueAsNumber )} , $${parseToCLPCurrency(data?.price)}</b></span>
+            <span class="date" >${data.operation}</span> - <span class="date" >${data.types}</span> /
+            <span class="date"><b>UF ${clpToUf(data.price, ufValueAsNumber)} - ${parseToCLPCurrency(data?.price)}</b></span>
             <h3 class="mt-3"><a href="/detalle_propiedad.html?${data.id}statusId=${1}&companyId=${20}">${data.title}</a></h3>
             <p>${data.city != undefined && data.city != "" && data.city != null ? data.city : "No registra ciudad" }, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune : "No registra comuna"}, Chile</p>
             <p><b>Habitacion(es):</b> ${data.bedrooms != null && data.bedrooms != undefined && data.bedrooms != "" ? data.bedrooms : "0"}</p>
@@ -201,8 +184,8 @@ document.getElementById("buscar")?.addEventListener("click", async () => {
                 </div>
                 <div class="col-8">
                   <div class="bg-white m-body">
-                    <span class="date">${data.operation}</span>-
-                    <span class="date"><b>UF ${clpToUf(data.price, ufValueAsNumber)}, $${data.price} </b></span>
+                  <span class="date" >${data.operation}</span> - <span class="date" >${data.types}</span> /
+                  <span class="date"><b>UF ${clpToUf(data.price, ufValueAsNumber)} - ${parseToCLPCurrency(data?.price)}</b></span>
                     <h3 class="mt-3"><a href="/detalle_propiedad.html?${data.id}&statusId=${1}&companyId=${20}">${data.title}</a></h3>
                     <p>${data.city != undefined && data.city != "" && data.city != null ? data.city : "No registra ciudad" }, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune : "No registra comuna"}, Chile</p>
                     <p><b>Habitacion(es):</b> ${data.bedrooms != undefined && data.bedrooms != null && data.bedrooms != "" ? data.bedrooms : "0" }</p>

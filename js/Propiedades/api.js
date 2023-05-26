@@ -16,12 +16,34 @@ const ufValue = response2?.UFs[0]?.Valor
 const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
 
 
+const filtroSelect = document.getElementById('filtro-extra');
+filtroSelect.addEventListener('change', handleFilterChange);
+showItems();
+
+function handleFilterChange() {
+  const selectedValue = filtroSelect.value;
+  // console.log(selectedValue);
+  // console.log(data);
+
+  let dataOrdenada;
+
+  if (selectedValue === 'MayorMenor') {
+    /* console.log('La opción seleccionada es MayorMenor'); */
+    dataOrdenada = data.sort((a, b) => b.price - a.price);
+  } else {
+    /* console.log('La opción seleccionada es Menor mayor'); */
+    dataOrdenada = data.sort((a, b) => a.price - b.price);
+  }
+  // console.log(dataOrdenada);
+  showItems();
+}
+
 
 document.getElementById("total-prop").innerHTML = `${response.meta.totalItems} Propiedades encontradas
 	</div>`;
   // let filtrado = data.filter(data => data.city != null && data.commune != null);
  
-
+  function showItems(){
   document.getElementById('container-prop-card').innerHTML = data.map(data => 
     `<div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4" id="" data-aos="fade-up" data-aos-delay="100" >
         <div class="media-entry" id="getProperty">
@@ -29,10 +51,11 @@ document.getElementById("total-prop").innerHTML = `${response.meta.totalItems} P
             <img src="${data.image != undefined && data.image != "" && data.image != null ? data.image : "images/Sin.png"  } " alt="Image" class="img-fluid imgCasas">
           </a>
           <div class="bg-white m-body">
-            <span class="date" >${data.operation}</span> -
-            <span class="date"><b>UF ${clpToUf(data.price, ufValueAsNumber)} , ${parseToCLPCurrency(data?.price)}</b></span>
+            <span class="date" >${data.operation}</span> - <span class="date" >${data.types}</span> /
+            <span class="date"><b>UF ${clpToUf(data.price, ufValueAsNumber)} - ${parseToCLPCurrency(data?.price)}</b></span>
             <h3 class="mt-3"><a href="/detalle_propiedad.html?${data.id}&statusId=${1}&companyId=${20}">${data.title}</a></h3>
             <p>${data.city != undefined && data.city != "" && data.city != null ? data.city : "No registra ciudad" }, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune : "No registra comuna"}, Chile</p>
+            <p><b>Código propiedad:</b> ${data.id }</p>
             <p><b>Habitacion(es):</b> ${data.bedrooms != undefined && data.bedrooms != null && data.bedrooms != "" ? data.bedrooms : "0"}</p>
             <p><b>Baños(s):</b>${data.bathrooms != undefined && data.bathrooms != null && data.bathrooms != "" ? data.bathrooms : "0"}</p>
             <p><b>Estacionamiento(s):</b> ${data.coveredParkingLots != undefined && data.coveredParkingLots != null && data.coveredParkingLots != "" ? data.coveredParkingLots : "0"}</p>
@@ -55,8 +78,8 @@ document.getElementById("total-prop").innerHTML = `${response.meta.totalItems} P
             </div>
             <div class="col-8">
               <div class="bg-white m-body">
-                <span class="date">${data.operation}</span>-
-                <span class="date"><b>UF ${clpToUf(data.price, ufValueAsNumber)}, $${data.price} </b></span>
+                <span class="date" >${data.operation}</span> - <span class="date">${data.types}</span> /
+                <span class="date"><b>UF ${clpToUf(data.price, ufValueAsNumber)} - ${parseToCLPCurrency(data?.price)}</b></span>
                 <h3 class="mt-3"><a href="/detalle_propiedad.html?${data.id}&statusId=${1}&companyId=${20}">${data.title}</a></h3>
                 <p>${data.city != undefined && data.city != "" && data.city != null ? data.city : "No registra ciudad" }, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune : "No registra comuna"}, Chile</p>
                 <p><b>Habitacion(es):</b> ${data.bedrooms != undefined && data.bedrooms != null && data.bedrooms != "" ? data.bedrooms : "0" }</p>
@@ -74,6 +97,6 @@ document.getElementById("total-prop").innerHTML = `${response.meta.totalItems} P
       </div>`
     ).join('');
     
-   
+  }  
 }
 
