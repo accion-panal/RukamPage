@@ -1,8 +1,10 @@
 import { getProperties} from "../services/PropertiesServices.js";
 
+import { PropertyData } from "../Data/userId.js";
 
 export default async function apiCallMap() {
 
+    const {CodigoUsuarioMaestro,realtorId, companyId} = PropertyData;
     document.getElementById(
 		"map"
 	).innerHTML = `    	<div class="spinner-border" role="status">
@@ -21,7 +23,7 @@ export default async function apiCallMap() {
         
     });
 
-    let {data} = await getProperties(0,1,20);
+    let {data} = await getProperties(CodigoUsuarioMaestro,realtorId, 1, companyId);
     const promiseMap = new Promise(
         (resolve)=>{
         data.map(data => {    
@@ -37,7 +39,7 @@ export default async function apiCallMap() {
                 const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
                 <span>${data.title}</span>
                 <br>
-                <a href="/detalle_propiedad.html?${data.id}&realtorId=${0}&statusId=${1}&companyId=${20}" name="VerDetalle"  class="more d-flex align-items-center float-start">
+                <a href="/detalle_propiedad.html?${data.id}&statusId=${1}&companyId=${companyId}" name="VerDetalle"  class="more d-flex align-items-center float-start">
                 <span class="label" id="getProperty">Ver Detalle</span>
                 <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
                 </a>`)

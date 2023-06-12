@@ -1,7 +1,7 @@
 import api from "./AuthencationServices.js"
 
-export const getProperties = async(realtorId, statusId , companyId) => {
-  let {data} = await api.get(`properties?realtorId=${realtorId}&statusId=${statusId}&companyId=${companyId}`);
+export const getProperties = async(CodigoUsuarioMaestro, realtorId, statusId , companyId) => {
+  let {data} = await api.get(`properties?CodigoUsuarioMaestro=${CodigoUsuarioMaestro}&realtorId=${realtorId}&statusId=${statusId}&companyId=${companyId}`);
   return data;
 }
 

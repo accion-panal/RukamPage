@@ -1,7 +1,9 @@
+import { PropertyData } from "../Data/userId";
 
 const form = document.getElementById('form-contact');
 let respuesta= document.getElementById('respuesta');
 
+let CompanyId = PropertyData.companyId;
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -18,6 +20,7 @@ let myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
  
 let raw = JSON.stringify({
+  "companyId":CompanyId,
   "name": firstName.value,
   "lastName":"",
   "email": email.value,

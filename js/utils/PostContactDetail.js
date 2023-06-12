@@ -1,4 +1,9 @@
+import { PropertyData } from "../Data/userId";
+
 const formRealtor = document.getElementById('form-realtor')
+
+let CompanyId = PropertyData.companyId;
+
 
 formRealtor.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -16,6 +21,7 @@ let myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
  
 let raw = JSON.stringify({
+  "companyId":CompanyId,
   "name": firstName.value,
   "lastName":"",
   "email": email.value,

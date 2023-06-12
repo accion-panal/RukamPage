@@ -1,3 +1,5 @@
+import {RealtorSendEmailData} from "./Data/userId.js";
+
 const formEmail = document.getElementById('form-contact');
 
 
@@ -5,6 +7,7 @@ formEmail.addEventListener('submit', function(e) {
     e.preventDefault();
 
 
+let ContactMail = RealtorSendEmailData.sendEmail;
 let firstName = document.getElementById('nombre');
 let email = document.getElementById('email');
 let subject = document.getElementById('asunto');
@@ -12,7 +15,7 @@ let phone = document.getElementById('phone');
 let message = document.getElementById('mensaje');
 
 
-fetch("https://formsubmit.co/ajax/contacto@rukam.cl", {
+fetch(`https://formsubmit.co/ajax/${ContactMail}`, {
   method: "POST",
   headers: { 
       'Content-Type': 'application/json',
