@@ -148,9 +148,9 @@
 											<label class="form-check-lable" style="color: #fff !important;">Precio</label>
 											<div class="position-relative" style="display: flex;justify-content: space-around;align-items:center;">
 												<label class="form-label-check" style="color: #fff;">UF</label>
-												<input type="checkbox" id="" class="form-check-input">
+												<input type="checkbox" id="inlineRadio1" class="form-check-input">
 												<label class="form-label-check" style="color: #fff;">CLP</label>
-												<input type="checkbox" id="" class="form-check-input">
+												<input type="checkbox" id="inlineRadio2" class="form-check-input">
 											</div>
 										</div>
 										<div class="form-group mb-4">
@@ -166,13 +166,13 @@
 									</div>
 									<div class="col-lg">
 										<div class="form-group mb-4">
-											<select class="form-select" name="region" id="region" >
+											<select class="form-select" name="region" id="regionTextId" >
 												<option value="0" selected>Región</option>
 												
 											</select>
 										</div>
 										<div class="form-group mb-4">
-											<select class="form-select" name="commune" id="commune">
+											<select class="form-select" name="commune" id="communeTextId">
 												<option value="" selected>Comuna</option>
 											</select>
 										</div>
@@ -182,6 +182,8 @@
 												<option value="1" >1</option>
 												<option value="2" >2</option>
 												<option value="3" >3</option>
+												<option value="4" >4</option>
+
 
 											</select>
 										</div>
@@ -214,17 +216,12 @@
 							<span>Ordena por: </span>
 						</div>
 						<div class="col-6 col-lg-6">
-							<select id="filtro-extra" name="" class="form-select">
+							<select id="FilterPrice" name="" class="form-select">
 								<option value="0" selected>Selecciona...</option>
 								<option value="MayorMenor">Precio mayor a menor</option>
 								<option value="MenorMayor">Precio menor a mayor</option>
 							</select>
 						</div>
-						<!-- <div class="col-3 col-lg-3 ">
-							<button type="button" class="btn btn-primary" id="buscar3">
-								Filtrar
-							</button>
-						</div> -->
 					</div>
 
 				</div>
@@ -249,13 +246,15 @@
 			<div class="tab-content " id="pills-tabContent">
 				<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 					 <div class="row align-items-stretch" id="container-prop-card">
-
 					</div>
+					<div id="pagination-col"></div>
+
 				</div>
 				<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 					<div class="row align-items-stretch" id="container-prop-list">
 
 					</div>
+					<div id="pagination-col"></div>
 				</div>
 				<div class="tab-pane fade active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 						<div id="map"></div>
@@ -345,10 +344,13 @@
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script type="module" src="js/mapProp.js"></script>
 		<script type="module" src="js/index.js"></script>
+		<script type="module" src="js/utils/pagination.js"></script>
+		<script type="module" src="js/utils/filterOnSearch.js"></script>
 
 
-		<script type="module" src="js/utils/filterOnSubmit.js"></script>
-		<script type="module" src="js/utils/filterOnSubmitIndex.js"></script>
+
+		<!-- <script type="module" src="js/utils/filterOnSubmit.js"></script> -->
+		<!-- <script type="module" src="js/utils/filterOnSubmitIndex.js"></script> -->
 		<script type="module" src="js/utils/getSelects.js"></script>
 
 

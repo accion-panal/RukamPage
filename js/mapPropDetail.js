@@ -3,6 +3,6 @@ import { PropertyData } from "./Data/userId.js";
 
 const url = window.location.search; 
 const value = url.match(/\d+/)[0];
-const {companyId} = PropertyData;
+const {companyId, realtorId} = PropertyData;
 
-apiCallMapDetail(value, 1, companyId);
+apiCallMapDetail(value, realtorId, 1, companyId);

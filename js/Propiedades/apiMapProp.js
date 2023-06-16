@@ -1,6 +1,6 @@
 import { getProperties} from "../services/PropertiesServices.js";
 
-import { PropertyData } from "../Data/userId.js";
+import { PropertyData , limitDataApi} from "../Data/userId.js";
 
 export default async function apiCallMap() {
 
@@ -19,11 +19,11 @@ export default async function apiCallMap() {
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-70.680628,-33.469970],
         // projection: 'globe',
-        zoom: 5,
+        zoom: 6,
         
     });
 
-    let {data} = await getProperties(CodigoUsuarioMaestro,realtorId, 1, companyId);
+    let {data} = await getProperties(1, limitDataApi.limit, CodigoUsuarioMaestro, 1, companyId, realtorId);
     const promiseMap = new Promise(
         (resolve)=>{
         data.map(data => {    
@@ -39,7 +39,7 @@ export default async function apiCallMap() {
                 const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
                 <span>${data.title}</span>
                 <br>
-                <a href="/detalle_propiedad.html?${data.id}&statusId=${1}&companyId=${companyId}" name="VerDetalle"  class="more d-flex align-items-center float-start">
+                <a href="/detalle_propiedad.html?${data.id}&realtoId=${realtorId}&statusId=${1}&companyId=${companyId}" name="VerDetalle"  class="more d-flex align-items-center float-start">
                 <span class="label" id="getProperty">Ver Detalle</span>
                 <span class="arrow"><span class="icon-keyboard_arrow_right"></span></span>
                 </a>`)
@@ -65,19 +65,6 @@ export default async function apiCallMap() {
                     .setPopup(popup) // sets a popup on this marker
                     .addTo(map);
                     
-
-            //         map.on('click', (event) => {
-            //             // If the user clicked on one of your markers, get its information.
-            //             const features = map.queryRenderedFeatures(event.point, {
-            //               layers: ['YOUR_LAYER_NAME'] // replace with your layer name
-            //             });
-            //             if (!features.length) {
-            //               return;
-            //             }
-            //             const feature = features[0];
-                      
-            //             // Code from the next step will go here.
-            //           });
             })
             resolve()
         }
