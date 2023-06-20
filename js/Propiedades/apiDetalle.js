@@ -18,19 +18,17 @@ let imagenes;
 
 data.images.forEach((images, index) => {imagenes +=
 `<div class="carousel-item ${ index == 0 ? "active" : "" }">
-	<img src="${images != undefined && images != null && images != "" ? images : "images/Sin.png"}" class="d-block imgCarrucel" alt="">						
+<img src="${images.replace(/\\/g, "//") != undefined ? images.replace(/\\/g, "//")  : 'images/Sin.png'}" class="d-block imgCarrucel" alt=""/>
 </div>  	
 `
 indicadores += `
-<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index}" ${index == 0 ? "class = active": ""} aria-current="true" aria-label="${index + 1}"></button>
+<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index }" ${index == 0 ? "class = active": ""} aria-current="true" aria-label="${index + 1}"></button>
 `
 }
 
 )
 
-
-
-	document.getElementById('detail-prop').innerHTML =
+document.getElementById('detail-prop').innerHTML =
     `<div class="section" style="padding-top: 1rem;padding-bottom: 0rem;">
 		<div class="container">
 			<div class="row mb-2">

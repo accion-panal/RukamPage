@@ -12792,6 +12792,9 @@ textarea {
   -webkit-transform: scale(1.2) translate(5%, -5%);
   -ms-transform: scale(1.2) translate(5%, -5%);
   transform: scale(1.2) translate(5%, -5%);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover !important;
 }
 
 @media (max-width: 1618px) {
@@ -12799,7 +12802,8 @@ textarea {
     -webkit-transform: scale(1.6) translate(10%, -5%);
     -ms-transform: scale(1.6) translate(10%, -5%);
     transform: scale(1.7) translate(10%, -5%);
-    height: 75% !important;
+    margin-top: 9%;
+    height: 100% !important;
     width: 100%;
   }
 }
@@ -12808,7 +12812,7 @@ textarea {
     -webkit-transform: scale(1.6) translate(10%, -5%);
     -ms-transform: scale(1.6) translate(10%, -5%);
     transform: scale(1.7) translate(10%, -5%);
-    height: 75% !important;
+    height: 85% !important;
     width: 100%;
   }
 }
@@ -12819,6 +12823,8 @@ textarea {
     -ms-transform: scale(1.9) translate(10%, -3%);
     transform: scale(1.5) translate(10%, -3%);
     height: 100%;
+    margin-top: 0;
+
   }
 }
 @media (max-width: 767.98px) {
@@ -12826,6 +12832,8 @@ textarea {
     -webkit-transform: scale(1.9) translate(10%, -3%);
     -ms-transform: scale(1.9) translate(10%, -3%);
     transform: scale(1.9) translate(10%, -3%);
+    margin-top: 15%;
+
   }
 }
 @media (max-width: 575.98px) {
@@ -12833,7 +12841,20 @@ textarea {
     /* -webkit-transform: scale(2.8) translate(10%, 0%);
     -ms-transform: scale(2.8) translate(10%, 0%);
     transform: scale(1.6) translate(10%, 0%); */
+    margin-top: 15%;
     width: 100%;
+    height: 65% !important;
+  }
+}
+@media (max-width: 361.98px) {
+  .hero img {
+    -webkit-transform: scale(1.9) translate(10%, -3%);
+    -ms-transform: scale(1.9) translate(10%, -3%);
+    transform: scale(1.9) translate(10%, -3%);
+    margin-top: 25%;
+    height: 52% !important;
+
+
   }
 }
 
