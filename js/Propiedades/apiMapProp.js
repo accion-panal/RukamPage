@@ -19,7 +19,7 @@ export default async function apiCallMap() {
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-70.680628,-33.469970],
         // projection: 'globe',
-        zoom: 6,
+        zoom: 7,
         
     });
 
@@ -47,10 +47,7 @@ export default async function apiCallMap() {
                 // create DOM element for the marker
                 const el = document.createElement('div');
                 el.id = 'marker';
-                // el.style.backgroundImage = `${data.img != null && data.img != '' && data.img != undefined ? data.img : "images/Sin.png"}`;
-                // el.style.width = `${50}px`;
-                // el.style.height = `${50}px`;
-                // el.style.backgroundSize = "100%";
+ 
             
                 new mapboxgl.Marker({
                     color: '#04B0C3',

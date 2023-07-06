@@ -13960,6 +13960,18 @@ textarea {
   padding: 20px 24px 20px 23px;
 }
 
+.textLimitClass{
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  
+}
+
+.textLimitClass:hover{
+  display: block !important;
+}
+
 .imgCasas {
   width: 100%;
   height: 300px;
@@ -13976,7 +13988,74 @@ textarea {
 .imgCasasList {
   width: 100%;
   height: 300px;
+  border-radius: 10px;
 }
+@media only screen and (max-width: 651px) {
+  .img-card{
+    width: 210px;
+    height: 254px;
+    border-radius: 4px;
+    display: flex;
+    gap: 5px;
+    padding: .4em;
+  }
+  .img-card  a{
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-card a:hover {
+    flex: 4;
+  }
+
+  .img-card a .imgCasasList{
+    min-width: 14em;
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: all .5s;
+
+  }
+  .img-card a:hover .imgCasasList {
+    transform: rotate(0);
+    position: absolute;
+    z-index: 99999;
+    padding-left: 100px;
+    margin-left: 200px;
+  }
+
+  .media-entry .m-body{
+    position: relative;
+    z-index: 9999;
+  }
+ 
+}
+
+@media only screen and (max-width: 451px) {
+  .img-card a:hover .imgCasasList {
+    transform: rotate(0);
+    position: absolute;
+    z-index: 99999;
+    padding-left: 100px;
+    margin-left: 140px;
+  }
+}
+
+@media only screen and (max-width: 361px) {
+  .img-card a:hover .imgCasasList {
+    transform: rotate(0);
+    position: absolute;
+    z-index: 99999;
+    padding-left: 28px;
+    margin-left: 100px;
+  }
+}
+
 .imgCorredor {
   border-radius: 50%;
   height: 175px;

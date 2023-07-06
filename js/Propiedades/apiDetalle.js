@@ -3,7 +3,13 @@ import { getPropertiesForId } from "../services/PropertiesServices.js";
 
 import	ExchangeRateServices from  "../services/ExchangeRateServices.js";
 
-import {parseToCLPCurrency, clpToUf} from "../utils/getExchangeRate.js"
+import {parseToCLPCurrency, clpToUf} from "../utils/getExchangeRate.js";
+
+// data = data.map(item => {
+// 	// Reemplazar "\\" por "//" en la propiedad "image"
+// 	item.image = item.image.replace(/\\/g, "//");
+// 	return item;
+// });
 
 export default async function apiDetalleCall(id,realtorId,statusId, companyId) {
 let {data} = await getPropertiesForId(id, realtorId, statusId, companyId);
@@ -11,14 +17,16 @@ let {data} = await getPropertiesForId(id, realtorId, statusId, companyId);
 const response = await ExchangeRateServices.getExchangeRateUF();
 const ufValue = response?.UFs[0]?.Valor
 const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
+const ufValueAsNumber2 = parseInt(ufValue.replace('.', '').replace(',', '.'));
 
 
 let indicadores;
 let imagenes;
 
+
 data.images.forEach((images, index) => {imagenes +=
 `<div class="carousel-item ${ index == 0 ? "active" : "" }">
-<img src="${images.replace(/\\/g, "//") != undefined ? images.replace(/\\/g, "//")  : 'images/Sin.png'}" class="d-block imgCarrucel" alt=""/>
+	<img src="${images.replace(/\\/g, "//") != undefined ? images.replace(/\\/g, "//")  : 'Ir a'}" class="img-fluid imgCarrucel"/>
 </div>  	
 `
 indicadores += `
@@ -39,8 +47,8 @@ document.getElementById('detail-prop').innerHTML =
 				</div>
 				<div class="col-4 d-flex justify-content-end">
 					<div class="text-center">
-						<h1 id="valueUf"><b>UF ${clpToUf(data?.price, ufValueAsNumber )}</b></h1>
-						<span style="font-size: 29px;">${parseToCLPCurrency(data?.price)}</span><br>
+					${data.currency.isoCode != 'CLP' ? `<h1 id="valueUf"><b>UF ${data.price}</b></h1> <span style="font-size: 29px;"> CLP ${parseToCLPCurrency(data.price * ufValueAsNumber2)}</span>` : `<h1 id="valueUf"><b>UF ${clpToUf(data.price, ufValueAsNumber)}</b></h1> - <span style="font-size: 29px;"> CLP ${parseToCLPCurrency(data?.price)}</span>`}
+
 					</div>
 				</div>
 			</div>
