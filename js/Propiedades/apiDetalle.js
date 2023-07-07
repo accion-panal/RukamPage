@@ -40,15 +40,14 @@ document.getElementById('detail-prop').innerHTML =
     `<div class="section" style="padding-top: 1rem;padding-bottom: 0rem;">
 		<div class="container">
 			<div class="row mb-2">
-				<div class="col-8">
+				<div class="col-sm-12 col-lg-8 mb-3">
 					<h1><b>${data.title}</b></h1>
 					<span>Cod: ${data.id}</span><br>
 					<span><i class='bx bx-map'></i> ${data.city != undefined && data.city != "" && data.city != null ? data.city : "No registra ciudad" }, ${data.commune != undefined && data.commune != "" && data.commune != null ? data.commune : "No registra comuna"}, Chile</span>
 				</div>
-				<div class="col-4 d-flex justify-content-end">
-					<div class="text-center">
-					${data.currency.isoCode != 'CLP' ? `<h1 id="valueUf"><b>UF ${data.price}</b></h1> <span style="font-size: 29px;"> CLP ${parseToCLPCurrency(data.price * ufValueAsNumber2)}</span>` : `<h1 id="valueUf"><b>UF ${clpToUf(data.price, ufValueAsNumber)}</b></h1> - <span style="font-size: 29px;"> CLP ${parseToCLPCurrency(data?.price)}</span>`}
-
+				<div class="col-sm-12 col-lg-4 container-divisas">
+					<div class="uf-clp-divisas">
+						${data.currency.isoCode != 'CLP' ? `<h1 id="valueUf"><b>UF ${data.price}</b></h1> <span style="font-size: 29px;"> CLP ${parseToCLPCurrency(data.price * ufValueAsNumber2)}</span>` : `<h1 id="valueUf"><b>UF ${clpToUf(data.price, ufValueAsNumber)}</b></h1>  <span style="font-size: 29px;"> CLP ${parseToCLPCurrency(data?.price)}</span>`}
 					</div>
 				</div>
 			</div>

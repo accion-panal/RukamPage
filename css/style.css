@@ -13960,6 +13960,56 @@ textarea {
   padding: 20px 24px 20px 23px;
 }
 
+.container-divisas{
+  display: flex;
+  justify-content: end;
+}
+.uf-clp-divisas h1 > span{
+  display: flex;
+  justify-content: end;
+  text-align: end;
+}
+@media only screen and (max-width:991px){
+
+  .container-divisas{
+    display: flex;
+    justify-content: start;
+  }
+
+}
+
+@media only screen and (max-width:459px){
+  .filtro {
+    width: 100%;
+    padding: 15px 12px 12px 12px;
+    margin-top: 49px;
+  }
+  .container-divisas{
+    display: flex;
+    justify-content: start;
+  }
+  .uf-clp-divisas div{  
+    text-align: start !important; 
+    justify-content: start;
+  }
+}
+
+@media only screen and (max-width:299px){
+  .filtro {
+    width: 100%;
+    padding: 15px 12px 12px 12px;
+    margin-top: 49px;
+  }
+  .container-divisas{
+    display: flex;
+    justify-content: start;
+  }
+  .uf-clp-divisas div{   
+    text-align: start !important; 
+    justify-content: start;
+  }
+}
+
 .textLimitClass{
   display: -webkit-box !important;
   -webkit-line-clamp: 1;
@@ -13988,7 +14038,7 @@ textarea {
 .imgCasasList {
   width: 100%;
   height: 300px;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 @media only screen and (max-width: 651px) {
   .img-card{
@@ -14078,13 +14128,6 @@ textarea {
   border-radius: 15px;
 }
 
-/* .mapboxgl-canvas {
-  width: max-content !important;
-} */
-
-/* .container-map {
-  position: relative;
-} */
 
 #map {
   width: 100% !important;
@@ -14199,6 +14242,15 @@ textarea {
   width: 50%;
 }
 
+.SectionformContactar{
+  height: 550px !important;
+}
+
+.imgCarrucel{
+  width: 100% !important;
+  height: 690px !important;
+}
+
 @media (max-width: 991px) {
   .logoEmp {
     width: 60%;
@@ -14208,27 +14260,32 @@ textarea {
     height: 30%;
     width: 25%;
   }
-}
 
-
-.SectionformContactar{
-  height: 550px !important;
-}
-
-@media (max-width: 991px){
   .SectionformContactar{
     height: 890px !important;
   }
-}
-
-.imgCarrucel{
-  width: 100% !important;
-  height: 690px !important;
-}
-
-@media (max-width: 991px){
   .imgCarrucel{
     width: 100% !important;
     height: 350px !important;
   }
+}
+
+@media (max-width: 459px) {
+  .logoEmp {
+    width: 100%;
+    height: auto;
+  }
+  .logoEmpFooter{
+    height: 30%;
+    width: 25%;
+  }
+}
+
+
+
+.img-fondo-about{
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+ 
 }

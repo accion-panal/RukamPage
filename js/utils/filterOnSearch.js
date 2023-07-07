@@ -65,6 +65,26 @@ if (storedGlobalQuery) {
     if(globalQuery.surface_m2 != null){
         document.getElementById("surface_m2").value = globalQuery.surface_m2;
     }
+
+     //* Actualizar variable segun el globalQuery
+     if(globalQuery.region != null){
+        const regionData = data.regions.find(region => region.id == globalQuery.region);
+        region = `${regionData.name}`;
+        console.log(region)
+
+    }
+    //* Actualizar variable segun el globalQuery
+    if(globalQuery.commune != null){
+        let aux = await getCommune(globalQuery.region);
+        const communeData = aux.data.find(commune => commune.id == globalQuery.commune);
+        commune = `${communeData.name}`
+        console.log(commune)
+
+    }
+    //* Actualizar variable segun el globalQuery
+    if(globalQuery.typeOfProperty != null){
+        typeOfProperty = globalQuery.typeOfProperty;
+    }
 } 
 
 
@@ -89,6 +109,10 @@ document.getElementById('typeOfProperty').addEventListener('change' ,(element) =
 //! Region
 document.getElementById("regionTextId").addEventListener( "change", (element) => {
     region = element.target.value;
+    if(element.target.value === 0 || element.target.value === '0'){
+        region = '';
+        commune = '';
+    }
     // console.log('id region: ',region);
 })
 
