@@ -87,7 +87,7 @@ export default async function renderCall() {
         // Reemplazar "\\" por "//" en la propiedad "image"
         item.image = item.image.replace(/\\/g, "//");
         return item;
-    });
+      });
         let containerGrid = document.getElementById('container-prop-card');
         if (containerGrid !== null) {
             document.getElementById("container-prop-card").innerHTML = data.map(data =>`

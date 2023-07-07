@@ -14036,23 +14036,33 @@ textarea {
  
 }
 
-@media only screen and (max-width: 451px) {
+@media only screen and (max-width: 459px) {
   .img-card a:hover .imgCasasList {
     transform: rotate(0);
     position: absolute;
     z-index: 99999;
-    padding-left: 100px;
-    margin-left: 140px;
+    padding-left: 90px;
+    margin-left: 130px;
   }
 }
 
-@media only screen and (max-width: 361px) {
+@media only screen and (max-width: 385px) {
   .img-card a:hover .imgCasasList {
     transform: rotate(0);
     position: absolute;
     z-index: 99999;
-    padding-left: 28px;
-    margin-left: 100px;
+    padding-left: 50px;
+    margin-left: 65px;
+  }
+}
+
+@media only screen and (max-width: 299px) {
+  .img-card a:hover .imgCasasList {
+    transform: rotate(0);
+    position: absolute;
+    z-index: 99999;
+    padding-left: 40px;
+    margin-left: 15px;
   }
 }
 
