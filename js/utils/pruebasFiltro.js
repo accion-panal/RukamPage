@@ -21,7 +21,8 @@ let query = {
   bathrooms: null,
   bedrooms: null,
   covered_parking_lots: null,
-  typePrice: null
+  typePrice: null,
+  surface_m2: null
 }
 
 let aux = new URLSearchParams(window.location.search);
@@ -105,6 +106,11 @@ document.getElementById("min_price").addEventListener("change", (element) => {
 //! precio maximo
 document.getElementById("max_price").addEventListener("change", (element) => {
   query.max_price = element.target.value;
+//   console.log('max_price: ',element.target.value)
+})
+
+document.getElementById("surface_m2").addEventListener("change", (element) => {
+  query.surface_m2 = element.target.value;
 //   console.log('max_price: ',element.target.value)
 })
 

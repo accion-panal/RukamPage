@@ -26,7 +26,6 @@ let globalQuery;
 let storedGlobalQuery = localStorage.getItem('globalQuery');
 if (storedGlobalQuery) {
     globalQuery = JSON.parse(storedGlobalQuery);
-    // console.log('globalQuery: ',globalQuery);
 
     if(globalQuery.bathrooms != null){
         document.getElementById("bathrooms").value = globalQuery.bathrooms;
@@ -56,9 +55,9 @@ if (storedGlobalQuery) {
         if(globalQuery.typePrice == 'uf'){document.getElementById('inlineRadio1').checked = true}
         if(globalQuery.typePrice == 'clp'){document.getElementById('inlineRadio2').checked = true}
     }
-    if(globalQuery.region != null){
-        /* document.getElementById("region").value = globalQuery.region; */
-    }
+    // if(globalQuery.region != null){
+    //     /* document.getElementById("region").value = globalQuery.region; */
+    // }
     if(globalQuery.typeOfProperty != null){
         document.getElementById("typeOfProperty").value = globalQuery.typeOfProperty;
     }
@@ -66,11 +65,11 @@ if (storedGlobalQuery) {
         document.getElementById("surface_m2").value = globalQuery.surface_m2;
     }
 
-     //* Actualizar variable segun el globalQuery
-     if(globalQuery.region != null){
+    //* Actualizar variable segun el globalQuery
+    if(globalQuery.region != null){
         const regionData = data.regions.find(region => region.id == globalQuery.region);
         region = `${regionData.name}`;
-        console.log(region)
+        // console.log(region)
 
     }
     //* Actualizar variable segun el globalQuery
@@ -78,7 +77,7 @@ if (storedGlobalQuery) {
         let aux = await getCommune(globalQuery.region);
         const communeData = aux.data.find(commune => commune.id == globalQuery.commune);
         commune = `${communeData.name}`
-        console.log(commune)
+        // console.log(commune)
 
     }
     //* Actualizar variable segun el globalQuery
