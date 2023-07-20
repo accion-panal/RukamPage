@@ -1,4 +1,4 @@
-import {RealtorSendEmailData} from "./Data/userId.js";
+import {RealtorSendEmailData} from "../Data/userId.js";
 
 
 const formEmailRealtor = document.getElementById("form-realtor");
