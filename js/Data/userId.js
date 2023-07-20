@@ -6,6 +6,7 @@ export const limitDataApi = { limit:6 };
 export const RealtorSendEmailData = {
     sendEmail: 'contacto@rukam.cl',  /* SendEmail.js */
     detail: 'contacto@rukam.cl',     /* SendEmailDetail.js */
+    landing: 'nicolascabreramillacan@gmail.com', /* SendEmailLanding.js */
 };
 
 

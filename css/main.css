@@ -76,7 +76,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: var(--color-primary);
+  background: var(--color-secondary);
   left: 0;
   right: 0;
   bottom: 0;
@@ -869,6 +869,13 @@ section {
   .hero {
     background-attachment: fixed;
   }
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  opacity: none;
 }
 
 .hero h2 {
