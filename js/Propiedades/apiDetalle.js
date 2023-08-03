@@ -20,7 +20,7 @@ const ufValueAsNumber = parseFloat(ufValue.replace(',', '.'));
 const ufValueAsNumber2 = parseInt(ufValue.replace('.', '').replace(',', '.'));
 
 
-let indicadores;
+let indicadores = '';
 let imagenes;
 
 
@@ -30,7 +30,7 @@ data.images.forEach((images, index) => {imagenes +=
 </div>  	
 `
 indicadores += `
-<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index }" ${index == 0 ? "class = active": ""} aria-current="true" aria-label="${index + 1}"></button>
+<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index }" ${index === 0 ? "class = active": ""} aria-current="true" aria-label="${index + 1}"></button>
 `
 }
 
