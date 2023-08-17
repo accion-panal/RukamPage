@@ -7,7 +7,7 @@ export default async function apiCallMap() {
     const {CodigoUsuarioMaestro,realtorId, companyId} = PropertyData;
     document.getElementById(
 		"map"
-	).innerHTML = `    	<div class="spinner-border" role="status">
+	).innerHTML = `<div class="spinner-border" role="status">
 		<span class="visually-hidden">Loading...</span>
 	</div>`;
 
@@ -23,7 +23,7 @@ export default async function apiCallMap() {
         
     });
 
-    let {data} = await getProperties(1, limitDataApi.limit, CodigoUsuarioMaestro, 1, companyId, realtorId);
+    let {data} = await getProperties(1, limitDataApi.limitMap, CodigoUsuarioMaestro, 1, companyId, realtorId);
     const promiseMap = new Promise(
         (resolve)=>{
         data.map(data => {    

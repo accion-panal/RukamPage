@@ -194,10 +194,10 @@
 				</div>
 			</div>
 			<div class="row align-items-stretch" >
-				<div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mt-3" data-aos="fade-up" data-aos-delay="100"  >
+				<div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mt-3" data-aos="fade-up" data-aos-delay="100"  >
 					<span class="" id="total-prop"></span>
 				</div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 " data-aos="fade-up" data-aos-delay="100">
+				<div class="col-12 col-sm-6 col-md-6 col-lg-5 mb-4 " data-aos="fade-up" data-aos-delay="100">
 					<div class="row ">
 						<div class="col-sm-4 col-lg-3 mt-3">
 							<span>Ordena por: </span>
@@ -211,30 +211,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-12 col-sm-6 col-md-6 col-lg-2 mb-4 " data-aos="fade-up" data-aos-delay="100">
-					<div class="row ">
-						<div class="col-sm-4 col-lg-3 mt-3">
-							<span>Mostrar: </span>
-						</div>
-						<div class="col-sm-8 col-lg-6">
-							<select id="FilterLimit" name="" class="form-select">
-								<option value="3">3</option>
-								<option value="6"  selected>6</option>
-								<option value="9">9</option>
-							</select>
-						</div>
-					</div>
-				</div>
 				<div class="col-12 col-sm-12 col-md-6 col-lg-3 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
 					<ul class="nav nav-pills " id="pills-tab" role="tablist">
 						<li class="nav-item" role="presentation">
-						  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="false">Tarjeta</button>
+						  <a class="nav-link"  type="button"  aria-controls="pills-home" aria-selected="false" href="propiedad.html">Tarjeta</a>
 						</li>
 						<li class="nav-item" role="presentation">
-						  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Lista</button>
+						  <a class="nav-link"  type="button"  aria-controls="pills-profile" aria-selected="false" href="propiedad.html">Lista</a>
 						</li>
 						<li class="nav-item" role="presentation">
-						  <a class="nav-link " type="button" aria-controls="pills-contact" aria-selected="true" href="propiedad-map.html">Mapa</a>
+						  <button class="nav-link active" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="true" >Mapa</button>
 						</li>
 					  </ul>
 				</div>
@@ -244,17 +230,11 @@
 	<div class="section" style="padding-top: 2rem;padding-bottom: 2rem;">
 		<div class="container">
 			<div class="tab-content " id="pills-tabContent">
-				<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-					 <div class="row align-items-stretch" id="container-prop-card">
-					</div>
-
+				<div class="tab-pane fade active show" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+						<div id="map"></div>
 				</div>
-				<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-					<div class="row align-items-stretch" id="container-prop-list">
-
-					</div>
-				</div>
-				<div id="pagination-col"></div>
+				
+				<!-- <div id="pagination-col"></div> -->
 
 			</div>
 		</div>
@@ -326,7 +306,7 @@
 
 
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-		<!-- <script type="module" src="js/mapProp.js"></script> -->
+		<script type="module" src="js/mapProp.js"></script>
 		<script type="module" src="js/index.js"></script>
 		<script type="module" src="js/utils/pagination.js"></script>
 		<script type="module" src="js/utils/filterOnSearch.js"></script>

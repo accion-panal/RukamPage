@@ -76,7 +76,7 @@ const filterSelects = async () => {
                 return `<option value="${data.value}">${data.name}</option>`;
             } else {
                 return `
-                    <option value="" selected >Tipo de operacion</option>
+                    <option value="" selected >Tipo de operación</option>
                     <option value="${data.value}">${data.name}</option>
                 `;
             }

@@ -1,6 +1,6 @@
 export const PropertyData = {CodigoUsuarioMaestro:0, companyId:20, realtorId: 0}
 
-export const limitDataApi = { limit:6 };
+export const limitDataApi = { limit:'', limitMap: 99};
 
 
 export const RealtorSendEmailData = {
