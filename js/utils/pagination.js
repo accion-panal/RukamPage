@@ -40,7 +40,7 @@ export default async function paginationCall() {
         if (storedLimitProperties) {
             limitProp = storedLimitProperties;
         }
-        console.log('limitProp pagination', limitProp)
+        // console.log('limitProp pagination', limitProp)
         let regex = new RegExp(`&page=${countPages}&limit=${limitProp}`);
         return url.replace(regex, '');
     }
@@ -52,7 +52,7 @@ export default async function paginationCall() {
         if (storedLimitProperties) {
             limitProp = storedLimitProperties;
         }
-        console.log('limitProp pagination', limitProp)
+        // console.log('limitProp pagination', limitProp)
         let regex = new RegExp(`&limit=${limitProp}&page=${countPages}`);
         return url.replace(regex, '');
     }

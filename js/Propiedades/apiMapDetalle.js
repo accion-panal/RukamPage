@@ -6,13 +6,17 @@ export default async function apiCallMapDetail(id,realtorId, statusId, companyId
 let {data} = await getPropertiesForId(id, realtorId,statusId, companyId );
 
 
-const LngLat = data.LngLat.replace("{", "")
-		.replace("}", "")
-		.replace(",", "")
-		.replace("Lat", "")
-		.replace("Lng:", "")
-		.replace(" ", "")
-		.split(":");
+let LngLat = data.LngLat;
+if(LngLat !== null){
+    LngLat = data.LngLat.replace("{", "")
+    .replace("}", "")
+    .replace(",", "")
+    .replace("Lat", "")
+    .replace("Lng:", "")
+    .replace(" ", "")
+    .split(":");
+}
+
 
 // console.log(id)
 
